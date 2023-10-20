@@ -98,118 +98,74 @@ class Gatti extends Prodotti
     }
 }
 
-$ciotolaBlu = new Cani('Ciotola Blu', 'Accessori', 69.99);
-$ciotolaBlu->setDesc('Lorem, ipsum dolor.');
+require __DIR__ . '/database/db.php';
 
-$mangineCani = new Cani('Purina Two', 'Alimentazione', 28.99);
-$mangineCani->setDesc('Gnam!!');
-
-$tiragraffi = new Gatti('Tiragraffi a torre', 'Accessori', 89.99);
-$tiragraffi->setDesc('Per le unghie del tuo micio!');
-
-$briscola = new Gatti('Briscola Per Gatti', 'Giochi', 9.95);
-$briscola->setDesc('Non so bene nemmeno io come funziona');
+include __DIR__ . '/partials/head.php'
 ?>
 
-<!doctype html>
-<html lang="en">
 
-<head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-</head>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand navbar-light bg-light">
-            <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                <a class="nav-item nav-link" href="#">About Us</a>
+<div class="jumbo">
+    <div class="p-5 mb-4 bg-light rounded-3 text-center ">
+        <div class="container py-5">
+            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+            <p class=" fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+            <button class="btn btn-primary btn-lg" type="button">About Us</button>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 my-2">
+                <div class="card text-start">
+                    <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php echo $ciotolaBlu->getName() ?></h4>
+                        <p class="card-text"><?php echo $ciotolaBlu->getCategory() ?></p>
+                        <p class="card-text"><?php echo $ciotolaBlu->getStaticDog() ?></p>
+                        <p class="card-text"><?php echo $ciotolaBlu->getDesc() ?></p>
+                        <h5 class="card-text"><?php echo $ciotolaBlu->getPrice() ?>€</h5>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
-    <div class="jumbo">
-        <div class="p-5 mb-4 bg-light rounded-3 text-center ">
-            <div class="container py-5">
-                <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-                <p class=" fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-                <button class="btn btn-primary btn-lg" type="button">About Us</button>
+            <div class="col-6 my-2">
+                <div class="card text-start">
+                    <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php echo $tiragraffi->getName() ?></h4>
+                        <p class="card-text"><?php echo $tiragraffi->getCategory() ?></p>
+                        <p class="card-text"><?php echo $tiragraffi->getStaticCat() ?></p>
+                        <p class="card-text"><?php echo $tiragraffi->getDesc() ?></p>
+                        <h5 class="card-text"><?php echo $tiragraffi->getPrice() ?>€</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 my-2">
+                <div class="card text-start">
+                    <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php echo $mangineCani->getName() ?></h4>
+                        <p class="card-text"><?php echo $mangineCani->getCategory() ?></p>
+                        <p class="card-text"><?php echo $mangineCani->getStaticDog() ?></p>
+                        <p class="card-text"><?php echo $mangineCani->getDesc() ?></p>
+                        <h5 class="card-text"><?php echo $mangineCani->getPrice() ?>€</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 my-2">
+                <div class="card text-start">
+                    <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php echo $briscola->getName() ?></h4>
+                        <p class="card-text"><?php echo $briscola->getCategory() ?></p>
+                        <p class="card-text"><?php echo $briscola->getStaticCat() ?></p>
+                        <p class="card-text"><?php echo $briscola->getDesc() ?></p>
+                        <h5 class="card-text"><?php echo $briscola->getPrice() ?>€</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-6 my-2">
-                    <div class="card text-start">
-                        <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $ciotolaBlu->getName() ?></h4>
-                            <p class="card-text"><?php echo $ciotolaBlu->getCategory() ?></p>
-                            <p class="card-text"><?php echo $ciotolaBlu->getStaticDog() ?></p>
-                            <p class="card-text"><?php echo $ciotolaBlu->getDesc() ?></p>
-                            <h5 class="card-text"><?php echo $ciotolaBlu->getPrice() ?>€</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 my-2">
-                    <div class="card text-start">
-                        <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $tiragraffi->getName() ?></h4>
-                            <p class="card-text"><?php echo $tiragraffi->getCategory() ?></p>
-                            <p class="card-text"><?php echo $tiragraffi->getStaticCat() ?></p>
-                            <p class="card-text"><?php echo $tiragraffi->getDesc() ?></p>
-                            <h5 class="card-text"><?php echo $tiragraffi->getPrice() ?>€</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 my-2">
-                    <div class="card text-start">
-                        <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $mangineCani->getName() ?></h4>
-                            <p class="card-text"><?php echo $mangineCani->getCategory() ?></p>
-                            <p class="card-text"><?php echo $mangineCani->getStaticDog() ?></p>
-                            <p class="card-text"><?php echo $mangineCani->getDesc() ?></p>
-                            <h5 class="card-text"><?php echo $mangineCani->getPrice() ?>€</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 my-2">
-                    <div class="card text-start">
-                        <img class="card-img-top" src="https://picsum.photos/200/300" alt="Title" height="400">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $briscola->getName() ?></h4>
-                            <p class="card-text"><?php echo $briscola->getCategory() ?></p>
-                            <p class="card-text"><?php echo $briscola->getStaticCat() ?></p>
-                            <p class="card-text"><?php echo $briscola->getDesc() ?></p>
-                            <h5 class="card-text"><?php echo $briscola->getPrice() ?>€</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer style="background-color: #333;">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-        </div>
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+</main>
+<?php
+include __DIR__ . '/partials/foot.php';
