@@ -1,5 +1,5 @@
 <?php
-$ciotolaBlu = new Cani('Ciotola Blu', 'Accessori', 69.99);
+$ciotolaBlu = new Cani('Ciotola Blu', 'Accessori', -69.99);
 $ciotolaBlu->setDesc('Lorem, ipsum dolor.');
 
 $mangineCani = new Cani('Purina Two', 'Alimentazione', 28.99);

@@ -8,8 +8,10 @@ organizzate il progetto come visto stamattina a lezione usando varie sottocartel
 
 
 <?php
+require_once __DIR__ . '/Traits/Namable.php';
 class Prodotti
 {
+    use Namable;
     protected $name;
     protected $category;
     protected $image;
@@ -20,15 +22,20 @@ class Prodotti
     {
         $this->name = $name;
         $this->category = $category;
+        if ($price <= 0) {
+            throw new RangeException("Price can't be negative!");
+        } elseif (is_string($price)) {
+            throw new InvalidArgumentException("Insert a Number!");
+        }
         $this->price = $price;
     }
 
     /* Getters */
 
-    public function getName()
+    /* public function getName()
     {
         return $this->name;
-    }
+    } */
 
     public function getCategory()
     {
@@ -68,12 +75,7 @@ class Cani extends Prodotti
 {
     static protected $type = 'Per Cani';
 
-    public function __construct(string $name, string $category, float $price)
-    {
-        $this->name = $name;
-        $this->category = $category;
-        $this->price = $price;
-    }
+
 
     public function getStaticDog()
     {
@@ -85,12 +87,7 @@ class Gatti extends Prodotti
 {
     static protected $type = 'Per Gatti';
 
-    public function __construct(string $name, string $category, float $price)
-    {
-        $this->name = $name;
-        $this->category = $category;
-        $this->price = $price;
-    }
+
 
     public function getStaticCat()
     {
