@@ -8,6 +8,8 @@ organizzate il progetto come visto stamattina a lezione usando varie sottocartel
 
 
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require_once __DIR__ . '/Traits/Namable.php';
 class Prodotti
 {
